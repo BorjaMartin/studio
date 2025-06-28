@@ -116,12 +116,12 @@ export default function Home() {
         <AdBanner />
       </div>
       
-      <footer className="flex items-center gap-4">
-        <Button variant="outline" size="lg" onClick={handleShareText}>
+      <footer className="w-full flex flex-col gap-4 sm:w-auto sm:flex-row">
+        <Button variant="outline" size="lg" onClick={handleShareText} className="w-full sm:w-auto">
           <Share2 className="mr-2 h-5 w-5" />
           {t('share_text')}
         </Button>
-        <Button size="lg" onClick={handleGenerateImage}>
+        <Button size="lg" onClick={handleGenerateImage} className="w-full sm:w-auto">
           <ImageIcon className="mr-2 h-5 w-5" />
           {t('generate_image')}
         </Button>
