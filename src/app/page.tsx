@@ -13,6 +13,7 @@ import { QuoteDisplay } from '@/components/QuoteDisplay';
 import { ShareDialog } from '@/components/ShareDialog';
 import { AppLogo } from '@/components/icons';
 import { useToast } from "@/hooks/use-toast";
+import { AdBanner } from '@/components/AdBanner';
 
 // Mock AI function
 async function generateStyleForQuote(quote: string): Promise<string> {
@@ -110,8 +111,9 @@ export default function Home() {
         </Sheet>
       </header>
 
-      <div className="flex flex-1 items-center justify-center">
+      <div className="flex flex-1 flex-col items-center justify-center">
         <QuoteDisplay quote={dailyQuote} visualStyle={settings.visualStyle} />
+        <AdBanner />
       </div>
       
       <footer className="flex items-center gap-4">
