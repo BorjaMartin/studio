@@ -54,6 +54,9 @@ export default function Home() {
           text: shareText,
         });
       } catch (error) {
+        if (error instanceof Error && error.name === 'AbortError') {
+          return;
+        }
         console.error('Error sharing:', error);
         toast({ title: t('error'), description: t('share_failed'), variant: "destructive" });
       }
