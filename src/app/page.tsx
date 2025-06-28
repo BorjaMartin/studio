@@ -54,7 +54,8 @@ export default function Home() {
           text: shareText,
         });
       } catch (error) {
-        if (error instanceof Error && error.name === 'AbortError') {
+        if (error instanceof Error && (error.name === 'AbortError' || error.name === 'NotAllowedError')) {
+          // User cancelled the share operation, so we do nothing.
           return;
         }
         console.error('Error sharing:', error);
